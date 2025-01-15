@@ -1,0 +1,21 @@
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+				   schema="dbo" 
+				   assembly="uab.server" 
+				   namespace="uab.server.Mappings" 
+				   default-lazy="false"
+				   default-cascade="none">
+	<class name="uab.server.Entities.TodoApp" table="TodoApp">
+		<id name="Id" column="Id" type="Int32" unsaved-value="0">
+			<generator class="native" />
+		</id>
+		<property name="Descripcion"/>
+		<property name="Visible"/>
+		<property name="Estado"/>
+        <property name="FechaCreacion" column="FechaCreacion" type="DateTime2"/>
+        <property name="FechaActualizacion" column="FechaActualizacion" type="DateTime2"/>
+		<many-to-one
+			name="Usuario"
+			column="IdUsuario"
+			class="uab.server.Entities.Usuario, uab.server"/>
+	</class>
+</hibernate-mapping>

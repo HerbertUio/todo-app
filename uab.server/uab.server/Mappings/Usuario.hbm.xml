@@ -1,0 +1,16 @@
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+				   schema="dbo" 
+				   assembly="uab.server" 
+				   namespace="uab.server.Mappings" 
+				   default-lazy="false"
+				   default-cascade="none">
+	<class name="uab.server.Entities.Usuario" table="Usuario">
+		<id name="Id" column="Id" type="Int32" unsaved-value="0">
+			<generator class="native" />
+		</id>
+		<property name="Nombre"/>
+		<property name="Apellido"/>
+        <property name="FechaNacimiento" column="FechaNacimiento" type="DateTime2"/>
+		<property name="Sexo"/>
+	</class>
+</hibernate-mapping>
